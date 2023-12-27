@@ -3,6 +3,7 @@
   width: 100%;
   height: 100%;
 
+	// Volume
 	.vjs-volume-bar.vjs-slider-horizontal {
 		height: 0.8em;
 
@@ -24,15 +25,28 @@
 	.vjs-time-control {
 		display: block;
 		font-size: 1.3em;
+		line-height: 3.2em;
+
+		&.vjs-current-time {
+			padding-right: 0px;
+			width: 3.5em;
+		}
 
 		&.vjs-time-divider {
 			padding: 0;
 			min-width: auto;
 		}
+
+		&.vjs-duration {
+			padding-left: 0px;
+			width: 3.5em;
+		}
 	}
 
-	// Control buttons
+	// Buttons
 	.vjs-control {
+		width: 48px;
+
 		.vjs-icon-placeholder::before {
 			font-size: 2.5em;
 		}
@@ -45,39 +59,13 @@
 
 	.vjs-control-bar {
 		flex-wrap: wrap;
-		height: 61px;
+		height: 55px;
 		background-color: transparent;
 	}
 
 	.vjs-progress-control {
 		width: 100%;
-		height: 1.8em;
-
-		// Progress bar
-		.vjs-progress-holder.vjs-slider.vjs-slider-horizontal {
-			background-color: var(--color-primary-1000);
-			height: 0.4em;
-
-			.vjs-play-progress,
-			.vjs-load-progress,
-			.vjs-load-progress div,
-			.vjs-tooltip-progress-bar {
-				height: 0.5em;
-			}
-			.vjs-load-progress {
-				background-color: var(--color-primary-100);
-			}
-			.vjs-play-progress {
-				background-color: var(--color-accent-1000);
-
-				&::before {	font-size: 1.3em;	}
-			}
-
-			&:focus {
-				text-shadow: none;
-				box-shadow: none;
-			}
-		}
+		height: 1.2em;
 
 		&:hover {
 			.vjs-time-tooltip {
@@ -86,6 +74,46 @@
 			.vjs-progress-holder {
 				font-size: inherit;
 			}
+		}
+	}
+
+	// Progress bar
+	.vjs-progress-holder.vjs-slider.vjs-slider-horizontal {
+		background-color: var(--color-primary-1000);
+
+		.vjs-play-progress,
+		.vjs-load-progress,
+		.vjs-load-progress div,
+		.vjs-tooltip-progress-bar {
+			height: 3px;
+		}
+
+		.vjs-mouse-progress {
+			.vjs-time-tooltip {
+				background-color: transparent;
+			}
+		}
+
+		.vjs-load-progress {
+			background-color: var(--color-primary-100);
+		}
+
+		.vjs-play-progress {
+			background-color: var(--color-accent-1000);
+
+			&::before {
+				font-size: 1.3em;
+			}
+
+			// Hide current time tooltip
+			.vjs-time-tooltip {
+				display: none;
+			}
+		}
+
+		&:focus {
+			text-shadow: none;
+			box-shadow: none;
 		}
 	}
 }
