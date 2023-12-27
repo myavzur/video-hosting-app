@@ -29,10 +29,10 @@ const VideoCard: React.FC<VideoCardProps> = ({
 			})}
 		>
 			<div className={styles.thumbnail}>
-				{video.thumbnailPath ? (
+				{video.poster_url ? (
 					<Image
 						className={styles.thumbnail__image}
-						src={video.thumbnailPath}
+						src={video.poster_url}
 						alt={video.name}
 						width={250}
 						height={190}
@@ -46,7 +46,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
 					<Link href={`/channels/${video.channel.id}`}>
 						<a className={styles["thumbnail__overlay-avatar"]}>
 							<Avatar
-								src={video.channel.avatarPath}
+								src={video.channel.avatar_url}
 								alt={video.channel.name}
 							/>
 						</a>
@@ -76,7 +76,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
 				<VideoStatistics
 					className={styles.information__statistics}
 					views={video.views}
-					createdAt={video.createdAt}
+					created_at={video.created_at}
 				/>
 
 				{(Boolean(onUpdate) || Boolean(onDelete)) && (

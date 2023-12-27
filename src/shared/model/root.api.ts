@@ -75,7 +75,7 @@ export const api = createApi({
 
 		updatePassword: builder.mutation<
 			null,
-			{ password: string; passwordConfirmation: string }
+			{ password: string; password_confirmation: string }
 		>({
 			query: email => ({
 				url: "/recovery/update-password",

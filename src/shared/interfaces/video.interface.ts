@@ -6,14 +6,15 @@ export interface IVideo extends IBase {
 	privacy: VideoPrivacy;
 	name: string;
 	description?: string;
-	thumbnailPath?: string;
-	videoPath: string;
-	originalFileName: string;
+	poster_url?: string;
+	file_url: string;
+	file_name: string;
+	file_type: string;
 	duration?: number;
 	views: number;
-	likesValue: number;
+	likes_value: number;
 
-	isLiked?: boolean;
+	is_liked?: boolean;
 	channel: IChannel;
 	comments: IComment[];
 }
@@ -26,8 +27,8 @@ export enum VideoPrivacy {
 }
 
 // API
-export type ICreateDraftVideoBody = Pick<IVideo, "originalFileName">;
+export type ICreateDraftVideoBody = Pick<IVideo, "file_name">;
 export type IUpdateVideoBody = Pick<
 	Partial<IVideo>,
-	"id" | "thumbnailPath" | "description" | "name" | "privacy"
+	"id" | "poster_url" | "description" | "name" | "privacy"
 >;

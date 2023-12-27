@@ -1,0 +1,91 @@
+.video-js.vjs-default-skin {
+	font-family: inherit;
+  width: 100%;
+  height: 100%;
+
+	.vjs-volume-bar.vjs-slider-horizontal {
+		height: 0.8em;
+
+		.vjs-volume-level {
+			height: 0.4em;
+
+			&::before {
+				font-size: 1.2em;
+			}
+		}
+	}
+
+	.vjs-custom-control-spacer {
+		display: flex;
+		margin-left: auto;
+	}
+
+	// CurrentTimeDisplay + TimeDivider + DurationDisplay
+	.vjs-time-control {
+		display: block;
+		font-size: 1.3em;
+
+		&.vjs-time-divider {
+			padding: 0;
+			min-width: auto;
+		}
+	}
+
+	// Control buttons
+	.vjs-control {
+		.vjs-icon-placeholder::before {
+			font-size: 2.5em;
+		}
+
+		&:hover,
+		&:focus {
+			text-shadow: none;
+		}
+	}
+
+	.vjs-control-bar {
+		flex-wrap: wrap;
+		height: 61px;
+		background-color: transparent;
+	}
+
+	.vjs-progress-control {
+		width: 100%;
+		height: 1.8em;
+
+		// Progress bar
+		.vjs-progress-holder.vjs-slider.vjs-slider-horizontal {
+			background-color: var(--color-primary-1000);
+			height: 0.4em;
+
+			.vjs-play-progress,
+			.vjs-load-progress,
+			.vjs-load-progress div,
+			.vjs-tooltip-progress-bar {
+				height: 0.5em;
+			}
+			.vjs-load-progress {
+				background-color: var(--color-primary-100);
+			}
+			.vjs-play-progress {
+				background-color: var(--color-accent-1000);
+
+				&::before {	font-size: 1.3em;	}
+			}
+
+			&:focus {
+				text-shadow: none;
+				box-shadow: none;
+			}
+		}
+
+		&:hover {
+			.vjs-time-tooltip {
+				font-size: 1em;
+			}
+			.vjs-progress-holder {
+				font-size: inherit;
+			}
+		}
+	}
+}

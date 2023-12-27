@@ -8,7 +8,7 @@ import styles from "./VideoStatistics.module.scss";
 
 const VideoStatistics: React.FC<VideoStatisticsProps> = ({
 	views,
-	createdAt,
+	created_at,
 	className
 }) => {
 	return (
@@ -17,7 +17,7 @@ const VideoStatistics: React.FC<VideoStatisticsProps> = ({
 				{getNumberMagnitude(views)} views
 			</div>
 
-			<div className={styles.statistics__stat}>{getElapsedTime(createdAt)}</div>
+			<div className={styles.statistics__stat}>{getElapsedTime(created_at)}</div>
 		</div>
 	);
 };

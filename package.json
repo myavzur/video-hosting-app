@@ -27,7 +27,8 @@
     "react-redux": "^8.0.2",
     "react-use-measure": "^2.1.1",
     "redux-persist": "^6.0.0",
-    "sass": "^1.54.5"
+    "sass": "^1.54.5",
+    "video.js": "^7.21.4"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^3.3.0",
@@ -37,6 +38,7 @@
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@types/react-icons": "^3.0.0",
+    "@types/video.js": "^7.3.52",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "autoprefixer": "^10.4.8",
     "eslint": "8.22.0",

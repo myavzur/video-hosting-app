@@ -11,7 +11,7 @@ export const commentApi = api.injectEndpoints({
 			}),
 			// ? Refresh video (refetch it from server)
 			invalidatesTags: (result, error, comment) => {
-				return [{ type: "Video", id: comment.videoId }];
+				return [{ type: "Video", id: comment.video_id }];
 			}
 		})
 	})

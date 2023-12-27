@@ -18,7 +18,7 @@ const ChannelCard: React.FC<ChannelCardProps> = ({ channel, size, children }) =>
 				<Avatar
 					className={styles["card__info-avatar"]}
 					size={size}
-					src={channel.avatarPath}
+					src={channel.avatar_url}
 					alt={channel.name}
 				/>
 
@@ -27,7 +27,7 @@ const ChannelCard: React.FC<ChannelCardProps> = ({ channel, size, children }) =>
 
 					{size !== "sm" && (
 						<p className={styles["card__info-summary-description"]}>
-							{getNumberMagnitude(channel.subscribersValue)} Subscribers
+							{getNumberMagnitude(channel.subscribers_value)} Subscribers
 						</p>
 					)}
 				</div>

@@ -8,6 +8,7 @@ import { PageAuthProvider, PersistedStoreProvider } from "@/app/providers";
 import "@/app/styles/global.scss";
 
 import { NotificationsOverlay } from "@/entities/notification";
+import "@/entities/videojs-player/styles/videojs-styles.scss";
 
 const ThemeProvider = dynamic(() => import("@/app/providers/ThemeProvider"), {
 	ssr: false

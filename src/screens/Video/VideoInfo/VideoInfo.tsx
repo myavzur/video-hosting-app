@@ -61,7 +61,7 @@ const VideoInfo: React.FC<VideoInfoProps> = ({ video }) => {
 							kind="secondary"
 							size="xs"
 						>
-							{video.isLiked ? "Unlike" : "Like"}
+							{video.is_liked ? "Unlike" : "Like"}
 						</Button>
 
 						<Button
@@ -79,7 +79,7 @@ const VideoInfo: React.FC<VideoInfoProps> = ({ video }) => {
 					<div className={styles.details__stats}>
 						<div
 							className={classNames(styles.stat, {
-								[styles["stat--color-red"]]: video.isLiked
+								[styles["stat--color-red"]]: video.is_liked
 							})}
 						>
 							<div className={styles.stat__icon}>
@@ -87,7 +87,7 @@ const VideoInfo: React.FC<VideoInfoProps> = ({ video }) => {
 							</div>
 
 							<p className={styles.stat__label}>
-								{getNumberMagnitude(video.likesValue)} Likes
+								{getNumberMagnitude(video.likes_value)} Likes
 							</p>
 						</div>
 
@@ -106,7 +106,7 @@ const VideoInfo: React.FC<VideoInfoProps> = ({ video }) => {
 								<AiFillCalendar />
 							</div>
 
-							<p className={styles.stat__label}>{getElapsedTime(video.createdAt)}</p>
+							<p className={styles.stat__label}>{getElapsedTime(video.created_at)}</p>
 						</div>
 
 						{video.privacy !== VideoPrivacy.PUBLIC && (

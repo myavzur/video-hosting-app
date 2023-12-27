@@ -10,7 +10,7 @@ const CurrentChannel: React.FC<CurrentChannelProps> = ({ channel }) => {
 		<div className={styles.current}>
 			<div className={styles.current__avatar}>
 				<Avatar
-					src={channel.avatarPath}
+					src={channel.avatar_url}
 					alt={channel.name}
 				/>
 			</div>

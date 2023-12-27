@@ -6,8 +6,8 @@ import { BsFillImageFill } from "react-icons/bs";
 import useMeasure from "react-use-measure";
 
 import { Modal, ModalHeader } from "@/entities/modal";
-import { Player } from "@/entities/player";
 import { videoApi } from "@/entities/video";
+import { VideoJsPlayer } from "@/entities/videojs-player";
 
 import { VideoPrivacy } from "@/shared/interfaces/video.interface";
 import { useUploadFile } from "@/shared/lib/hooks";
@@ -87,7 +87,7 @@ const EditVideoModal: React.FC<EditVideoModalProps> = ({
 				name: video.name,
 				description: video.description,
 				privacy: (String(video.privacy) || VideoPrivacy.PRIVATE) as VideoPrivacy,
-				thumbnailPath: video.thumbnailPath
+				poster_url: video.poster_url
 			});
 		}
 	}, [reset, video]);
@@ -183,12 +183,12 @@ const EditVideoModal: React.FC<EditVideoModalProps> = ({
 
 								<section className={styles.editor__row}>
 									<div className={styles.editor__thumbnails}>
-										{video?.thumbnailPath && (
+										{video?.poster_url && (
 											<Image
 												className={styles["editor__thumbnails-thumbnail"]}
 												height={100}
 												width={170}
-												src={video.thumbnailPath}
+												src={video.poster_url}
 												alt={video.name}
 											/>
 										)}
@@ -229,10 +229,24 @@ const EditVideoModal: React.FC<EditVideoModalProps> = ({
 							style={{ height: alignmentContainerBounds.height }}
 						>
 							<div className={styles["editor__video-player"]}>
-								{video?.videoPath && (
-									<Player
-										poster={video.thumbnailPath}
-										src={video.videoPath}
+								{video?.file_url && (
+									<VideoJsPlayer
+										options={{
+											poster: video.poster_url,
+											sources: [
+												{
+													src: video.file_url,
+													type: video.file_type
+												}
+											],
+											disablePictureInPicture: true,
+											controlBar: {
+												pictureInPictureToggle: false,
+												fullscreenToggle: false,
+												currentTimeDisplay: false,
+												timeDivider: false
+											},
+										}}
 									/>
 								)}
 							</div>
@@ -250,7 +264,7 @@ const EditVideoModal: React.FC<EditVideoModalProps> = ({
 								<div className={styles["video-info__row"]}>
 									<div className={styles["video-info__row-field"]}>Filename</div>
 									<div className={styles["video-info__row-value"]}>
-										{video?.originalFileName}
+										{video?.file_name}
 									</div>
 								</div>
 							</div>

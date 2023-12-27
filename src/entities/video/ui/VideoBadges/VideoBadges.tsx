@@ -19,7 +19,7 @@ import styles from "./VideoBadges.module.scss";
 const VideoBadges: React.FC<VideoStatisticsProps> = ({
 	duration,
 	views,
-	createdAt,
+	created_at,
 	privacy,
 	className
 }) => {
@@ -52,11 +52,11 @@ const VideoBadges: React.FC<VideoStatisticsProps> = ({
 			)) ||
 				null}
 
-			{createdAt && (
+			{created_at && (
 				<Badge
 					className={styles.badges__badge}
 					icon={DiDatabase}
-					label={getElapsedTime(createdAt)}
+					label={getElapsedTime(created_at)}
 				/>
 			)}
 		</div>

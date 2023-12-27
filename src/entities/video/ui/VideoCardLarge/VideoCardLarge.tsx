@@ -21,10 +21,10 @@ const VideoCardLarge: React.FC<VideoCardLargeProps> = ({
 				[styles[`video--preset-${preset}`]]: Boolean(preset)
 			})}
 		>
-			{video.thumbnailPath && (
+			{video.poster_url && (
 				<Image
 					className={styles.thumbnail}
-					src={video.thumbnailPath}
+					src={video.poster_url}
 					alt={video.name}
 					layout="fill"
 					priority
@@ -37,7 +37,7 @@ const VideoCardLarge: React.FC<VideoCardLargeProps> = ({
 						className={styles["information__general-badges"]}
 						duration={video.duration}
 						views={video.views}
-						createdAt={video.createdAt}
+						created_at={video.created_at}
 					/>
 
 					<Link href={`/videos/${video.id}`}>

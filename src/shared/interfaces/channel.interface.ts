@@ -4,19 +4,17 @@ import { IVideo } from "./video.interface";
 export interface IChannel extends IBase {
 	email: string;
 	name: string;
-	avatarPath: string;
+	avatar_url: string;
 	description?: string;
 	password?: string;
-
-	isVerified: boolean;
-	subscribersValue: number;
-
+	is_verified: boolean;
+	subscribers_value: number;
 	subscriptions: ISubscription[];
 	videos?: IVideo[];
 }
 
 export interface ISubscription extends IBase {
-	toChannel: IChannel;
+	to_channel: IChannel;
 }
 
 // Enums
@@ -31,6 +29,6 @@ export type IRegistrationBody = Pick<
 	Required<IChannel>,
 	"email" | "password" | "name"
 > & {
-	passwordConfirmation: string;
+	password_confirmation: string;
 };
 export type IAuthResponse = Omit<IChannel, "password" | "videos">;

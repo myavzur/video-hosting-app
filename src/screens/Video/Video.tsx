@@ -4,8 +4,8 @@ import React, { useEffect } from "react";
 
 import { MainLayout } from "@/layouts";
 
-import { Player } from "@/entities/player";
 import { VideoCard, videoApi } from "@/entities/video";
+import { VideoJsPlayer } from "@/entities/videojs-player";
 
 import { BRAND_NAME } from "@/shared/constants/brand.constants";
 import { Loader } from "@/shared/ui";
@@ -50,11 +50,18 @@ const Video: React.FC<VideoProps> = () => {
 			{video && (
 				<div className={styles.layout}>
 					<main className={classNames(styles["layout__video"], styles.video)}>
-						<Player
-							className={styles["video__player"]}
-							src={video.videoPath}
-							poster={video.thumbnailPath}
-							autoPlay={true}
+						<VideoJsPlayer
+							classNames={styles["video__player"]}
+							options={{
+								autoplay: true,
+								sources: [
+									{
+										src: video.file_url,
+										type: "video/mp4"
+									}
+								],
+								poster: video.poster_url
+							}}
 						/>
 
 						<div className={styles["video__info"]}>

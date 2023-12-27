@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, className }) => {
 			setFileChosen(true);
 
 			const video = await createDraftVideo({
-				originalFileName: file.name
+				file_name: file.name
 			}).unwrap();
 
 			const formData = new FormData();

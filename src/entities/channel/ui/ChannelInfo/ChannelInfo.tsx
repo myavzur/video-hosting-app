@@ -13,7 +13,7 @@ const ChannelInfo: React.FC<ChannelInfoProps> = ({ channel, message }) => {
 		<div className={styles.info}>
 			<Avatar
 				className={styles.info__avatar}
-				src={channel.avatarPath}
+				src={channel.avatar_url}
 				alt={channel.name}
 			/>
 
@@ -25,7 +25,7 @@ const ChannelInfo: React.FC<ChannelInfoProps> = ({ channel, message }) => {
 				<div className={styles.info__content_message}>
 					{message
 						? message
-						: `${getNumberMagnitude(channel.subscribersValue)} subscribers`}
+						: `${getNumberMagnitude(channel.subscribers_value)} subscribers`}
 				</div>
 			</div>
 		</div>

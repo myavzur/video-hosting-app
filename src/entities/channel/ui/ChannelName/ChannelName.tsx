@@ -20,7 +20,7 @@ const ChannelName: React.FC<ChannelNameProps> = ({
 			>
 				<div className={styles.name}>{channel.name}</div>
 
-				{withVerificationMark && channel.isVerified && (
+				{withVerificationMark && channel.is_verified && (
 					<BsFillCheckCircleFill className={styles["verification-icon"]} />
 				)}
 			</a>

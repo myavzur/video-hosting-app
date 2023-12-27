@@ -11,7 +11,7 @@
 
   .video {
     &__player {
-      @apply rounded-md;
+      @apply rounded-md overflow-hidden;
       background-color: rgba(0 0 0 / 0.3);
       height: 700px;
     }

@@ -16,14 +16,14 @@ const Subscriptions: React.FC = () => {
 			<Heading> Subscriptions </Heading>
 
 			{channel?.subscriptions?.length ? (
-				channel.subscriptions.map(({ toChannel }) => {
+				channel.subscriptions.map(({ to_channel }) => {
 					return (
 						<Link
-							href={`/channels/${toChannel.id}`}
-							key={toChannel.id}
+							href={`/channels/${to_channel.id}`}
+							key={to_channel.id}
 						>
 							<a>
-								<ChannelCard channel={toChannel} />
+								<ChannelCard channel={to_channel} />
 							</a>
 						</Link>
 					);

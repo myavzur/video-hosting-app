@@ -96,14 +96,14 @@ const SignUp: React.FC = () => {
 						},
 						validate: {
 							matchesPasswordConfirmation: value => {
-								const { passwordConfirmation } = getValues();
-								if (value != passwordConfirmation) {
-									setError("passwordConfirmation", {
+								const { password_confirmation } = getValues();
+								if (value != password_confirmation) {
+									setError("password_confirmation", {
 										message: "Passwords don't match"
 									});
 									return true;
 								}
-								clearErrors("passwordConfirmation");
+								clearErrors("password_confirmation");
 								return undefined;
 							}
 						},
@@ -114,7 +114,7 @@ const SignUp: React.FC = () => {
 				/>
 
 				<PasswordField
-					{...register("passwordConfirmation", {
+					{...register("password_confirmation", {
 						validate: {
 							matchesPassword: value => {
 								const { password } = getValues();
@@ -125,8 +125,8 @@ const SignUp: React.FC = () => {
 					})}
 					className={styles.form__field}
 					placeholder="Repeat your password"
-					error={errors.passwordConfirmation?.message || errors.password?.message}
-					preventErrorMessage={!Boolean(errors.passwordConfirmation?.message)}
+					error={errors.password_confirmation?.message || errors.password?.message}
+					preventErrorMessage={!Boolean(errors.password_confirmation?.message)}
 				/>
 			</div>
 

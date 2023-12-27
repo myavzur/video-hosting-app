@@ -17,7 +17,7 @@ const ButtonSubscribe: React.FC<ButtonSubscribeProps> = ({
 	const isSubscribed =
 		subscribeStatus.data?.result === SubscriptionResult.SUBSCRIBED ||
 		channel?.subscriptions.some(
-			subscription => subscription.toChannel.id === toChannelId
+			subscription => subscription.to_channel.id === toChannelId
 		);
 
 	return (
