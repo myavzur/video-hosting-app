@@ -1,1 +1,1 @@
-export { reorderBottomPanel } from "./reorder-bottom-panel";
+export { enableSmoothSeeking } from "./enable-smooth-seeking";

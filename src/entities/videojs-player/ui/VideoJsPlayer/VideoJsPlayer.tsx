@@ -4,7 +4,7 @@ import videojs from "video.js";
 
 import { DEFAULT_OPTIONS } from "./VideoJsPlayer.config";
 import { VideojsPlayerProps } from "./VideoJsPlayer.interface";
-import { reorderBottomPanel } from "../../lib/helpers";
+import { enableSmoothSeeking } from "../../lib/helpers";
 
 export const VideoJsPlayer: React.FC<VideojsPlayerProps> = ({
 	classNames,
@@ -18,12 +18,14 @@ export const VideoJsPlayer: React.FC<VideojsPlayerProps> = ({
 	useEffect(() => {
 		if (!playerRef.current && videoRef.current) {
 			const videoEl = document.createElement("video");
+			videoEl.classList.add("video-js", "vjs-default-skin", "vjs-big-play-centered");
+
 			videoRef.current.appendChild(videoEl);
 			playerRef.current = videojs(videoEl, mergedOptions);
 
 			const player = playerRef.current;
 			player.on("ready", () => {
-				reorderBottomPanel(player);
+				enableSmoothSeeking();
 			});
 		}
 
@@ -38,12 +40,7 @@ export const VideoJsPlayer: React.FC<VideojsPlayerProps> = ({
 	return (
 		<div
 			ref={videoRef}
-			className={cn(
-				"video-js",
-				"vjs-default-skin",
-				"vjs-big-play-centered",
-				classNames
-			)}
+			className={cn("video-js", "vjs-default-skin", "vjs-big-play-centered", classNames)}
 		></div>
 	);
 };

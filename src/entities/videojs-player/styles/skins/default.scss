@@ -3,12 +3,19 @@
   width: 100%;
   height: 100%;
 
+	.vjs-big-play-button {
+		background-color: transparent;
+		border: none;
+		font-size: 6em;
+	}
+
 	// Volume
 	.vjs-volume-bar.vjs-slider-horizontal {
-		height: 0.8em;
+		height: 0.4em;
+		margin: 2em 0.45em;
 
 		.vjs-volume-level {
-			height: 0.4em;
+			height: 0.35em;
 
 			&::before {
 				font-size: 1.2em;
@@ -25,7 +32,7 @@
 	.vjs-time-control {
 		display: block;
 		font-size: 1.3em;
-		line-height: 3.2em;
+		line-height: 3.5em;
 
 		&.vjs-current-time {
 			padding-right: 0px;
@@ -48,7 +55,7 @@
 		width: 48px;
 
 		.vjs-icon-placeholder::before {
-			font-size: 2.5em;
+			font-size: 2.8em;
 		}
 
 		&:hover,
@@ -59,26 +66,28 @@
 
 	.vjs-control-bar {
 		flex-wrap: wrap;
-		height: 55px;
+		height: 50px;
 		background-color: transparent;
 	}
 
+	// Progress Bar
 	.vjs-progress-control {
-		width: 100%;
-		height: 1.2em;
+		position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0.5em;
+    top: -1em;
 
 		&:hover {
-			.vjs-time-tooltip {
-				font-size: 1em;
-			}
-			.vjs-progress-holder {
-				font-size: inherit;
+			.vjs-play-progress .vjs-time-tooltip {
+				display: none;
 			}
 		}
 	}
 
 	// Progress bar
-	.vjs-progress-holder.vjs-slider.vjs-slider-horizontal {
+	.vjs-progress-holder {
 		background-color: var(--color-primary-1000);
 
 		.vjs-play-progress,
@@ -88,12 +97,6 @@
 			height: 3px;
 		}
 
-		.vjs-mouse-progress {
-			.vjs-time-tooltip {
-				background-color: transparent;
-			}
-		}
-
 		.vjs-load-progress {
 			background-color: var(--color-primary-100);
 		}
@@ -101,8 +104,12 @@
 		.vjs-play-progress {
 			background-color: var(--color-accent-1000);
 
+			// Progress Dot
 			&::before {
+				opacity: 0;
+				color: var(--color-accent-1000);
 				font-size: 1.3em;
+				transition: opacity 0.3s ease;
 			}
 
 			// Hide current time tooltip
@@ -114,6 +121,23 @@
 		&:focus {
 			text-shadow: none;
 			box-shadow: none;
+		}
+	}
+
+	// SEEK STYLES
+	&.vjs-seeking,
+	&.vjs-paused {
+		// Progress Dot
+		.vjs-play-progress::before {
+			opacity: 1;
+		}
+
+		.vjs-time-tooltip {
+			font-size: 1em;
+		}
+
+		.vjs-progress-holder {
+			font-size: inherit;
 		}
 	}
 }
