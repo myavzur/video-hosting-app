@@ -1,12 +1,15 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Preview
+![vhub](https://github.com/myavzur/vhub-app/blob/main/.preview/vhub.png?raw=true)
+
 ## Configuration
 
 Requests on NEXT/api and NEXT/uploads will be redirected to NEST/api and NEST/uploads
 * [http://localhost:4000/api/*\*/\*](#)           `->`    [http://localhost:5000/api/*\*/\*](#)
 * [http://localhost:4000/uploads/*\*/\*](#)   `->`    [http://localhost:5000/uploads/*\*/\*](#)
 
-![Next Config](https://github.com/myavzur/videos-hub/blob/main/.preview/config-next.png?raw=true)
+![Next Config](https://github.com/myavzur/vhub-app/blob/main/.preview/config-next.png?raw=true)
 
 ---
 
