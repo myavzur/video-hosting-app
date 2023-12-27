@@ -242,7 +242,6 @@ const EditVideoModal: React.FC<EditVideoModalProps> = ({
 											disablePictureInPicture: true,
 											controlBar: {
 												pictureInPictureToggle: false,
-												fullscreenToggle: false,
 												currentTimeDisplay: false,
 												timeDivider: false
 											},
