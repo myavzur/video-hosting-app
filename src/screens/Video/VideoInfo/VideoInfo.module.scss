@@ -1,0 +1,68 @@
+.info {
+  @apply flex;
+  gap: var(--space-6);
+
+  .divider {
+    margin: var(--space-3) 0;
+    background-color: var(--color-primary-800);
+  }
+
+  &__left {
+    @apply rounded-md;
+    align-self: flex-start;
+    flex-basis: 70%;
+    padding: var(--space-3);
+    background-color: var(--color-primary-900);
+
+    .name {
+      @apply text-lg;
+    }
+
+    .description {
+      color: var(--color-primary-400);
+      word-break: break-all;
+    }
+  }
+
+  &__right {
+    flex-basis: 30%;
+
+    .details {
+      @apply rounded-md;
+      background-color: var(--color-primary-900);
+      margin-top: var(--space-6);
+      padding: var(--space-3);
+
+      &__actions {
+        @apply grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3);
+      }
+
+      &__stats {
+        .stat {
+          @apply flex items-center;
+
+          &__icon {
+            transition: var(--transition-duration) color;
+            margin-right: var(--space-3);
+          }
+
+          &__label {
+            @apply text-xs font-light;
+          }
+
+          &--color-red {
+            .stat__icon {
+              color: var(--color-etc-red);
+            }
+          }
+        }
+
+        .stat + .stat {
+          margin-top: var(--space-3);
+        }
+      }
+    }
+  }
+}

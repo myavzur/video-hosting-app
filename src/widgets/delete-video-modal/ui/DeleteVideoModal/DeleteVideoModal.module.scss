@@ -1,0 +1,9 @@
+.footer {
+  @apply flex items-center justify-between;
+}
+
+.delete {
+  &__checkbox {
+    @apply mt-6;
+  }
+}

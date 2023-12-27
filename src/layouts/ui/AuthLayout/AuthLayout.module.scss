@@ -1,0 +1,15 @@
+.layout {
+  @apply h-screen overflow-hidden flex;
+
+  &__content {
+    @apply flex items-center justify-center;
+    flex: 1;
+  }
+
+  &__video {
+    @apply flex;
+    flex: 1.5;
+    clip-path: polygon(10% 0%, 100% 0, 100% 100%, 0% 100%);
+    pointer-events: none;
+  }
+}

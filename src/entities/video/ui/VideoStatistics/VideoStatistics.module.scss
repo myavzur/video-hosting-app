@@ -1,0 +1,18 @@
+.statistics {
+  @apply flex items-center text-xs font-light;
+  color: var(--color-primary-400);
+
+  &__stat + &__stat{
+    @apply ml-5 relative;
+
+    &:before {
+      @apply block rounded-full absolute -left-2.5;
+      background-color: var(--color-primary-400);
+      content: "";
+      width: 5px;
+      height: 5px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.logo {
+  @apply flex items-center;
+
+  &__svg {
+    font-size: inherit;
+    min-width: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  &__text {
+    @apply font-thin;
+    margin-left: 0.625em;
+  }
+}

@@ -1,0 +1,36 @@
+.link {
+  @apply flex items-center text-gray-500 font-light relative;
+
+  // * Make line behind the scene
+  &::before {
+    @apply 
+      h-full w-0.5 absolute -left-6 opacity-0 top-0 -translate-x-1;
+    content: '';
+    background-color: var(--color-primary-900);
+    transition: var(--transition-duration) all;
+  }
+
+  // * Show line
+  &:hover::before {
+    @apply opacity-100;
+  }
+
+
+  &__content {
+    @apply mr-4 p-2 rounded-md;
+    background-color: var(--color-primary-900);
+  } 
+
+  &__title {
+    @apply font-normal;
+    letter-spacing: 0px;
+  }
+
+  &--active {
+    color: var(--color-primary-100);
+
+    .link__content {
+      background-color: var(--color-accent-1000);
+    }
+  }
+}

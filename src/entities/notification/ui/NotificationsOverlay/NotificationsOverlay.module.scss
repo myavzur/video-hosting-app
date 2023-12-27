@@ -1,0 +1,11 @@
+.notifications {
+  @apply absolute z-notifications py-8 right-5 flex flex-col max-h-screen overflow-y-scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.notifications__notification {
+  width: 28rem;
+}

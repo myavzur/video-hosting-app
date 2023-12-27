@@ -1,0 +1,39 @@
+.radio {
+  @apply flex items-center cursor-pointer relative;
+
+  &__input {
+    @apply invisible w-0 absolute;
+  }
+
+  &__input:checked + &__marker::after {
+    @apply w-2 h-2 rounded-full absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-primary-100);
+  }
+
+  &__input:checked + &__marker {
+    background-color: var(--color-accent-1000)
+  }
+
+  &__marker {
+    @apply w-5 h-5 rounded-full relative self-start;
+    background-color: var(--color-primary-1000);
+  }
+
+  &__info {
+    @apply flex flex-col ml-2 gap-0.5;
+
+    &-title {
+      @apply text-2xs;
+      color: var(--color-primary-100)
+    }
+
+    &-description {
+      @apply text-2xs;
+      color: var(--color-primary-400)
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.field {
+  @apply w-full;
+
+  &__error {
+    @apply w-full text-xs mb-2;
+    color: var(--color-etc-red);
+    animation: moveFromBottomToBase var(--transition-duration) forwards;
+  }
+
+  &__input {
+    --inner-spacing-x: 0.6em;
+    --inner-spacing-y: 0.3em;
+    --font-size: 0.6em;
+
+    @apply relative w-full flex items-center transition-colors;
+
+    background-color: var(--color-primary-800);
+    border-color: rgba(0,0,0,0);
+    color: var(--color-primary-100);
+    padding: var(--inner-spacing-y) var(--inner-spacing-x);
+    border-radius: 0.16em;
+    border-width: 0.16em;
+    transition: var(--transition-duration) all;
+    
+    &:hover,
+    &:focus {
+      @apply cursor-text;
+      border-color: var(--color-accent-1000);
+
+      .icon {
+        color: var(--color-accent-1000);
+      }
+    }
+
+    &-icon {
+      font-size: var(--font-size);
+      margin-right: calc(var(--inner-spacing-x) + 0.4em);
+      transition: var(--transition-duration) color;
+    }
+    
+    &-real {
+      @apply w-full outline-none bg-inherit;
+      font-size: var(--font-size);
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--color-accent-1000);
+      }
+
+      &::-webkit-scrollbar { 
+        width: 1px;  /* Safari and Chrome */
+      }
+    }
+
+    &--error,
+    &--error:focus,
+    &--error:hover {
+      border-color: var(--color-etc-red);
+
+      .field__input-icon {
+        color: var(--color-etc-red);
+      }
+    }
+
+    &--with-icon {
+      --inner-spacing-x: 0.6em;
+      --inner-spacing-y: 0.5em;
+      --font-size: 0.6em
+    }
+  }
+}
+
+@keyframes moveFromBottomToBase {
+  from {
+    transform: translateY(60px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

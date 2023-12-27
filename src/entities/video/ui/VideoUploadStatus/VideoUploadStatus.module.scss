@@ -1,0 +1,26 @@
+.status {
+  @apply flex items-center gap-2;
+
+  &__indicators {
+    @apply flex items-center gap-2;
+
+    &-indicator {
+      @apply text-base;
+      color: var(--color-primary-500);
+      transition: var(--transition-duration) color;
+
+      &_processing {
+        @apply animate-pulse;
+        animation-iteration-count: infinite;
+      }
+
+      &_done {
+        color: var(--color-accent-1000);
+      }
+    }
+  }
+
+  &__message {
+    @apply text-xs;
+  }
+}

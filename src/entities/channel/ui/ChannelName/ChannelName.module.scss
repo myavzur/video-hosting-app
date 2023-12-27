@@ -1,0 +1,16 @@
+.content {
+  @apply flex items-center text-xs;
+
+  &_primary {
+    @apply font-normal;
+  }
+
+  &_secondary {
+    @apply font-light;
+  }
+
+  .verification-icon {
+    color: var(--color-accent-1000);
+    margin-left: var(--space-1);
+  }
+}

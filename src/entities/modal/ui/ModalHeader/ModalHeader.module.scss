@@ -1,0 +1,17 @@
+@import "@/shared/styles/mixins";
+
+.header {
+  @apply flex items-center justify-between;
+
+  &__title {
+    @apply pr-2;
+    @include cut-on-line(2);
+  }
+  &__close {
+    @apply text-lg;
+
+    &:hover {
+      color: var(--color-accent-1000);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.header {
+  @apply flex justify-between items-center;
+
+  --header-space-x: calc((var(--space-main-layout-x) * 0.5) - 15px);
+
+  padding: var(--space-6) var(--header-space-x);
+
+  &__left {
+    @apply flex items-center;
+
+    &-toggle {
+      margin: 0 var(--header-space-x) 0 0;
+    }
+  }
+
+  &__search {
+    @apply w-5/12;
+  }
+
+  &__toolbar {
+    @apply flex items-center;
+
+    &-action {
+      @apply mr-5;
+    }
+  }
+}

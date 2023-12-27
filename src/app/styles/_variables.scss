@@ -1,0 +1,25 @@
+body {
+  // Transition
+  --transition-duration: 500ms;
+
+  // Z-indexes
+  --z-idx-sidebar: 10;
+  --z-idx-sidebar-overlay: 9;
+  --z-idx-search-input: 5;
+  --z-idx-search-result: 4;
+
+  // Spaces
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 15px;
+  --space-4: 20px;
+  --space-6: 30px;
+
+  --space-main-layout-x: 120px;
+}
+
+@media screen and (max-width: 758px) {
+  body {
+    --space-main-layout-x: 60px;
+  }
+}

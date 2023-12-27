@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@/app/styles/_normalize.scss";
+@import "@/app/styles/_fonts.scss";
+@import "@/app/styles/_variables.scss";
+@import "@/app/styles/_themes.scss";
+
+body {
+  font-family: "Montserrat",'Times New Roman', Times, serif;
+  background-color: var(--color-primary-1000);
+  color: var(--color-primary-100);
+}

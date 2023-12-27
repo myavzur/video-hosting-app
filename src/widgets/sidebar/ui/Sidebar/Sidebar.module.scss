@@ -1,0 +1,26 @@
+.sidebar {
+  --sidebar-space-x: calc(var(--space-main-layout-x) / 2 - 15px);
+
+  height: 100%;
+  padding: var(--sidebar-space-x) var(--sidebar-space-x);
+  z-index: var(--z-idx-sidebar);
+  background-color: var(--color-primary-1000);
+
+  &__divider {
+    margin: var(--space-6) 0;
+  }
+
+  &__heading {
+    @apply flex;
+
+    &-logo {
+      margin: 0 auto;
+    }
+  } 
+
+  &__copyright {
+    @apply text-xs font-light;
+    color: var(--color-primary-900);
+    margin-top: var(--space-6);
+  }
+}

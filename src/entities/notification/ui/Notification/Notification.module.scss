@@ -1,0 +1,33 @@
+.notification {
+  @apply rounded-b-md overflow-hidden cursor-pointer w-full;
+  background-color: rgba(0,0,0, 0.7);
+
+  &--error .notification__timer { background-color: var(--color-etc-red); }
+  &--success .notification__timer { background-color: var(--color-etc-green); }
+  &--warning .notification__timer { background-color: var(--color-etc-yellow); }
+  &--info .notification__timer { background-color: var(--color-accent-1000); }
+}
+
+.notification__timer {
+  --duration: 10s;
+
+  @apply w-full;
+  background-color: var(--color-primary-1000);
+  height: 2px;
+  animation: timer var(--duration) linear forwards;
+}
+
+.notification__body {
+  @apply p-2.5 text-xs whitespace-pre-wrap;
+}
+
+
+@keyframes timer {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}

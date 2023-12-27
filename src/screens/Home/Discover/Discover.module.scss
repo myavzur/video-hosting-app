@@ -1,0 +1,12 @@
+.discover {
+  @apply flex h-96;
+  gap: var(--space-6);
+
+  &__top {
+    flex: 2;
+  }
+
+  &__random {
+    flex: 1.35;
+  }
+}

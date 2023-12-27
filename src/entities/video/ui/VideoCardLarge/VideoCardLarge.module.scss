@@ -1,0 +1,103 @@
+@import '@/shared/styles/mixins.scss';
+
+.video {
+  @apply flex w-full h-full relative overflow-hidden select-none rounded-lg;
+
+  --video-space: var(--space-6);
+  z-index: 0;
+
+  .thumbnail {
+    @apply object-center object-cover pointer-events-none;
+  }
+
+  .information {
+    @apply inner-shadow flex flex-col justify-between w-full h-full;
+
+    padding: var(--video-space);
+    background: rgba(14, 13, 32, .5);
+    z-index: 1;
+
+    // * Video card info (video-badges, video-name, video-description)
+    &__general {
+      &-badges {
+        @apply text-xs;
+      }
+
+      &-name {
+        @apply text-2xl uppercase font-bold;
+
+        margin-top: var(--video-space);
+        max-width: 75%;
+
+        @include cut-on-line(2);
+      }
+
+      &-description {
+        @apply mt-4 text-xs whitespace-pre-wrap;
+        max-width: 30rem;
+
+        @include cut-on-line(3);
+      }
+    }
+
+    // * Video card author (channel-name)
+    &__author {
+      &-legend {
+        @apply uppercase text-2xs font-light;
+      }
+
+      &-name {
+        margin-top: var(--space-1);
+      }
+    }
+  }
+
+  &--orientation {
+    &-portrait {
+      @apply rounded-none;
+
+      .information {
+        @apply py-12 ;
+
+        &__general {
+          &_name {
+            @apply w-full text-4xl;
+            @include cut-on-line(6)
+          }
+
+          &_description {
+            @apply w-full;
+            @include cut-on-line(4)
+          }
+        }
+      }
+    }
+  }
+
+  &--preset {
+    &-authorization-screen {
+      .information {
+        &__general {
+          margin-left: 9%;
+          transform: skew(-7deg);
+
+          &_name {
+            @apply mt-6;
+          }
+
+          &_description {
+            @apply mt-5;
+
+            max-width: 48%;
+            @include cut-on-line(4);
+
+          }
+        }
+
+        &__author {
+          transform: skew(-9deg);
+        }
+      }
+    }
+  }
+}

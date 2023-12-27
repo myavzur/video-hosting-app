@@ -1,0 +1,19 @@
+.loader {
+  @apply w-full h-full flex items-center justify-center;
+
+  &__text {
+    @apply text-base italic animate-pulse uppercase flex items-center;
+    animation-iteration-count: infinite;
+
+    &-letter {
+      @apply animate-bounce;
+      animation-iteration-count: infinite;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 100}ms;
+        }
+      }
+    }
+  }
+}

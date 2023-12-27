@@ -1,0 +1,19 @@
+.svg {
+  &__background {
+    fill: var(--color-primary-1000)
+  }
+
+  &__shape-shadow {
+    path:nth-child(1) {
+      fill: var(--color-accent-800)
+    }
+
+    path:nth-child(2) {
+      fill: var(--color-accent-900)
+    }
+  }
+
+  &__shape {
+    fill: var(--color-accent-1000)
+  }
+}

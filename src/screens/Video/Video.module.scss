@@ -1,0 +1,28 @@
+.layout {
+  @apply flex;
+
+  --layout-spacing: var(--space-6);
+
+  gap: var(--layout-spacing);
+
+  &__video {
+    flex-basis: 75%;
+  }
+
+  .video {
+    &__player {
+      @apply rounded-md;
+      background-color: rgba(0 0 0 / 0.3);
+      height: 700px;
+    }
+
+    &__info {
+      margin-top: var(--layout-spacing);
+    }
+  }
+
+  &__similar {
+    flex-basis: 25%;
+  }
+
+}

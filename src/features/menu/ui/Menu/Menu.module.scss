@@ -1,0 +1,5 @@
+.menu {
+  &__link + &__link {
+    margin-top: var(--space-6);
+  }
+}

@@ -1,0 +1,75 @@
+@import '@/shared/styles/mixins.scss';
+
+.editor {
+  @apply flex gap-4;
+
+  &__footer {
+    @apply flex items-center justify-between;
+  }
+
+  &__form {
+    @apply w-3/5;
+  }
+
+  &__video {
+    @apply w-2/5 rounded-t-sm rounded-b-lg;
+    max-height: 100%;
+    overflow: hidden;
+
+    &-player {
+      background-color: var(--color-primary-800);
+      height: 150px;
+      overflow: hidden;
+    }
+  }
+
+  &__thumbnails {
+    @apply grid grid-cols-2 gap-2;
+
+    &-thumbnail {
+      @apply rounded-md overflow-hidden;
+      height: 100px;
+    }
+  }
+
+  &__field {
+    @apply text-base;
+  }
+
+  &__alignment-container {
+    @apply mb-4;
+  }
+
+  &__row + &__row {
+    @apply mt-4;
+  }
+}
+
+.radio + .radio {
+  @apply mt-4;
+}
+
+.video-info {
+  @apply p-4 h-full;
+  background-color: var(--color-primary-1000);
+
+  &__row {
+    & + & {
+      @apply mt-4;
+    }
+
+    &-field {
+      @apply text-2xs;
+    }
+
+    &-value {
+      @apply text-xs w-full;
+
+      @include cut-on-line(2);
+    }
+  }
+}
+
+.blue {
+  color: var(--color-accent-1000);
+}

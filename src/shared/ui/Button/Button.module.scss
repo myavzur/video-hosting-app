@@ -1,0 +1,59 @@
+.button {
+  &, &[type="submit"] {
+    @apply flex items-center justify-center rounded-sm gap-2;
+    
+    background-color: var(--color-primary-900);
+    color: var(--color-primary-100);
+    transition-property: background-color, color, opacity;
+    transition-duration: var(--transition-duration);
+    padding: 0.55em 0.75em;
+
+    &:disabled {
+      cursor: auto;
+      opacity: 0.6;
+    }
+  }
+
+  &__icon {
+    min-width: 1.1em;
+    width: 1.1em;
+    height: 1.1em;
+  }
+
+  &--active {
+    &, &[type="submit"] {
+      @apply bg-gray-400;
+    }
+  }
+
+  &--color {
+    &-secondary {
+      &, &[type="submit"] {
+        background-color: var(--color-primary-800);
+
+        &:hover,
+        &:focus {
+          background-color: var(--color-primary-500);
+        }
+      }
+    }
+
+    &-tertiary {
+      &, &[type="submit"] {
+        background-color: var(--color-primary-700);
+  
+        &:hover,
+        &:focus {
+          background-color: var(--color-primary-500);
+        }
+      }
+    }
+  }
+
+  &--size-xs {
+    &, &[type="submit"] {
+      @apply text-xs;
+    }
+  }
+
+}

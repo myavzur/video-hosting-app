@@ -1,0 +1,32 @@
+.layout {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__overlay {
+    @apply absolute w-full h-full pointer-events-none;
+    min-height: 100vh;
+    min-width: 100vw;
+    z-index: var(--z-idx-sidebar-overlay);
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  &__sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 350px;
+    min-height: 100vh;
+    height: 100%;
+    z-index: var(--z-idx-sidebar);
+  }
+
+  &__header {
+    width: 100%;
+  }
+
+  &__content {
+    width: 100%;
+    margin: 0 var(--space-main-layout-x) var(--space-6);
+  }
+}

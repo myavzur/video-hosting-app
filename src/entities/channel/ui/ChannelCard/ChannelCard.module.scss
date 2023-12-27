@@ -1,0 +1,39 @@
+.card {
+  @apply rounded-md;
+  --card-spacing: var(--space-3);
+
+  background-color: var(--color-primary-900);
+  padding: var(--card-spacing);
+
+  &__info {
+    @apply flex items-center;
+
+    &-avatar {
+      margin-right: var(--card-spacing);
+    }
+
+    &-summary {
+      &-name {
+        @apply text-2xs font-normal;
+      }
+
+      &-description {
+        @apply text-2xs font-light;
+        color: var(--color-primary-400);
+      }
+    }
+  }
+
+  &__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--card-spacing);
+    margin-top: var(--card-spacing);
+  }
+
+  &--size {
+    &-sm {
+      --card-spacing: var(--space-1)
+    }
+  }
+}

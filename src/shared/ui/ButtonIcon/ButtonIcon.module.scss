@@ -1,0 +1,9 @@
+.button {
+  font-size: 25px;
+  transition: var(--transition-duration) color;
+  
+  &:hover,
+  &:focus {
+    color: var(--color-accent-1000);
+  }
+}

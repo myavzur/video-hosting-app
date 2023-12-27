@@ -1,0 +1,9 @@
+.catalog {
+  @apply grid grid-cols-4 grid-flow-row;
+
+  gap: var(--space-6);
+
+  &--direction {
+    &-column {}
+  }
+}

@@ -1,0 +1,87 @@
+@import '@/shared/styles/mixins.scss';
+
+.video {
+  @apply flex flex-col relative rounded-lg overflow-hidden;
+
+  --video-space: var(--space-3);
+
+  background-color: var(--color-primary-900);
+
+  &:hover,
+  &:focus {
+    .thumbnail__overlay {
+      box-shadow: none;
+      background: rgba(14, 13, 32, 0.15);
+    }
+  }
+
+  // * Video card thumbnail (video-image, video-badge, creator-avatar)
+  .thumbnail {
+    @apply relative;
+    height: 14rem;
+
+    &__image {
+      @apply w-full object-cover object-center;
+    }
+
+    &__placeholder {
+      @apply absolute;
+      width: 45px;
+      height: 45px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__overlay {
+      @apply inner-shadow absolute w-full h-full transition-all;
+      box-shadow: 0px 0px 45px var(--video-space) rgb(0, 0, 0, .3) inset;
+      background: rgba(14, 13, 32, .3);
+      z-index: 1;
+
+      &-avatar {
+        @apply absolute bottom-0;
+        transform: translateY(50%);
+        right: var(--video-space);
+      }
+
+      &-badges {
+        @apply text-2xs absolute;
+        top: var(--video-space);
+        left: var(--video-space);
+      }
+    }
+
+  }
+
+  // * Video card information (creator-name, video-name, video-stats).
+  .information {
+    @apply relative flex flex-col justify-between grow;
+    padding: var(--video-space);
+    row-gap: var(--video-space);
+
+    &__channel-name {
+      color: var(--color-primary-400);
+    }
+
+    &__name {
+      @apply text-white text-sm font-medium items-start;
+      margin-bottom: auto;
+
+      @include cut-on-line(2);
+    }
+
+    &__statistics {}
+
+    &__actions {
+      @apply flex items-center gap-2 absolute;
+      margin-top: var(--video-space);
+      right: var(--video-space);
+      bottom: var(--video-space);
+    }
+  }
+
+  &--kind-secondary {
+    background-color: var(--color-primary-800);
+  }
+}

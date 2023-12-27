@@ -1,0 +1,20 @@
+.link {
+  @apply transition-colors border-b-2 border-transparent;
+  color: var(--color-accent-1000);
+  transition-property: color, border-color;
+  transition-duration: var(--transition-duration);
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-accent-1000);
+  }
+
+  &--kind-secondary {
+    color: var(--color-accent-100);
+
+    &:hover,
+    &:focus {
+      border-color: var(--color-accent-100);
+    }
+  }
+}

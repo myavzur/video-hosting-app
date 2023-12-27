@@ -1,0 +1,78 @@
+.field {
+  @apply flex items-center justify-center w-full h-full 
+    relative p-10 border-2 border-dashed cursor-pointer overflow-hidden;
+  transition-property: border-color, color;
+  transition-duration: var(--transition-duration);
+  border-color: var(--color-primary-800);
+
+  &__preview {
+    @apply absolute w-full h-full;
+  }
+
+  // Block with Icon, title and description
+  &__info {
+    @apply flex flex-col items-center select-none pointer-events-none;
+
+    &-icon {
+      color: var(--color-primary-800);
+      width: 50px;
+      height: 50px;
+      transition: 
+        0.2s transform ease-in-out,
+        0.3s color;
+    }
+
+    &-title {
+      @apply mt-6;
+    }
+
+    &-verbose {
+      @apply text-xs mt-1;
+      color: var(--color-primary-500)
+    }
+  }
+
+  // Original input
+  &__input {
+    @apply invisible w-0 absolute;
+  }
+
+  &--dragging {
+    border-color: var(--color-accent-1000);
+
+    .field__info {
+      &-icon {
+        color: var(--color-accent-1000);
+        transform: translate(0, 5px);
+      }
+    }
+  }
+
+  &--loading {
+    .field__info {
+      &-icon {
+        @apply animate-pulse;
+        color: var(--color-accent-1000);
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+
+  &--size-sm {
+    .field__info {
+      &-icon {
+        width: 25px;
+        height: 25px;
+      }
+
+      &-title {
+        @apply text-2xs mt-0.5;
+      }
+
+      &-verbose {
+        @apply text-2xs mt-1;
+        color: var(--color-primary-500);
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.form {
+  @apply flex items-center flex-col;
+  max-width: 23rem;
+  min-width: 23rem;
+
+  &__logo {
+    @apply text-4xl;
+  }
+
+  // * Inputs
+  &__fields {
+    @apply mt-7 w-full;
+  }
+  
+  &__field {
+    @apply text-base;
+
+    & + & {
+      @apply mt-5;
+    }
+  }
+
+  &__link, &__button {
+    @apply mt-5;
+  }
+}
